@@ -5,7 +5,7 @@ const redirectMiddleware = (req, res, next) => {
   const originalUrl = req.fullUrl || `${req.protocol}://${req.headers.host}${req.url}`;
   const targetDomain = `https://www.cabdiwaaxidsiciid.site${req.url}`;
   
-  if (originalUrl === 'https://cabdiwaaxidsiciid.vercel.app/' || originalUrl.includes('cabdiwaaxidsiciid.vercel.app')) {
+  if (originalUrl !== targetDomain || originalUrl !== `https://cabdiwaaxidsiciid.site${req.url}`) {
     res.set({
       'X-Redirect-By': 'Novaxjs2-Redirect-Middleware',
       'X-New-Location': targetDomain
